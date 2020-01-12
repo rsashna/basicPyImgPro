@@ -1,3 +1,9 @@
+""""
+lib: cv2, numpy, matplotlib
+splits channels of BGR to RGB and individually
+uses plt to subplot, names figures, makes histogram
+"""
+
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
@@ -22,7 +28,14 @@ titles = ['Original Image', 'Blue Channel',
 images = [imgO, b, g, r]
 
 for i in range(4):
+    plt.figure(20)
     plt.subplot(2,2,i+1),plt.imshow(images[i], 'gray')
     plt.title(titles[i])
     plt.xticks([]),plt.yticks([])
+plt.show()
+
+vals = img.mean(axis=2).flatten()
+# plot histogram with 255 bins
+b, bins, patches = plt.hist(vals, 255)
+plt.xlim([0,255])
 plt.show()
