@@ -16,5 +16,6 @@ h=gaussKernel.gaussKernel(r)
 cv2.imshow('image', img)
 
 print(np.matrix(h))
+cv2.waitKey(0)
 
 # cv2.imshow('image2', img2)

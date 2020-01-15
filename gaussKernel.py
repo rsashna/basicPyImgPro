@@ -10,17 +10,10 @@ def gaussKernel(r):
     sigSq=sig**2
     xr=r* np.ones((5,), dtype=int)
     xt=np.ones((r,), dtype=int)
-    # print("xtshape",xt.shape)
-    # print("xrshape",xr.shape)
     xt1=np.array(xt)
-    # print("lsit?",xt1)
 
     for i in range(r):
         xt[i] = (fr*2-(i+fr))
-        # # xt.append((fr*2-(i+fr)))
-        # np.append(xt,(fr*2-(i+fr)))
-        # print((fr*2-(i+fr)))
-
     print("xt array: ",xt)
     xt=abs(xt)
     x=xr-xt
@@ -29,18 +22,17 @@ def gaussKernel(r):
     print("gauss:",gauss)
     for i in range(len(gauss)):
         gauss[i] = (1/((math.sqrt(2*math.pi))*sig)) *math.exp(-1/2*((x[i])-(r+1))**2/sigSq)
-    print("gauss2:",gauss)
-    # gauss = np.array(gauss)
-    gaussm=np.tile(gauss,(r,1))#wierd stuff here
-    print("gauss3:",gaussm)
-    # gaussw2d = np.multiply(gauss.transpose(),gaussm)
+
+    gaussm=np.tile(gauss,(r,1))
+
     gaussw2d=np.outer(gauss, gauss)
-    print("gaussw2d:",gaussw2d)
+
     summ=gaussw2d.sum()
-    print("summ",summ)
+    if summ == 0:
+        summ = 0.00001
     gaussw2d = (1/summ)*(gaussw2d)
-    print("gaussw2d:",gaussw2d, "end")
-    # gaussmat = fspecial('gaussian',[5 5],sig)
+
     h=gaussw2d
+    print("Gaussian filter:\n",gaussw2d, "\n-.-.-\n")
 
     return h
