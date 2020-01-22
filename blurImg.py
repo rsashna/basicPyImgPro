@@ -18,7 +18,7 @@ kernel = np.ones((r,r), np.uint8)
 
 #own function in same folder
 h=gaussKernel.gaussKernel(r)
-imgOut = cv2.filter2D(h, -1, kernel)
+imgOut = cv2.filter2D(img, -1, h)
 
 #python needs size of kernel
 kernel = np.ones((15,15), np.uint8)

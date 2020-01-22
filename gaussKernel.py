@@ -23,7 +23,7 @@ def gaussKernel(r):
     for i in range(len(gauss)):
         gauss[i] = (1/((math.sqrt(2*math.pi))*sig)) *math.exp(-1/2*((x[i])-(r+1))**2/sigSq)
 
-    gaussm=np.tile(gauss,(r,1))
+    # gaussm=np.tile(gauss,(r,1))
 
     gaussw2d=np.outer(gauss, gauss)
 
