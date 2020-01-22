@@ -3,7 +3,7 @@ import math
 import numpy as np
 
 def gaussKernel(r):
-
+# this is an edit 
     # where r is the actual kernel size of gaussian
     fr=math.floor(r/2)
     sig = r/3
