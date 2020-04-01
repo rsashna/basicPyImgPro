@@ -6,10 +6,10 @@ liveStream = cv2.VideoCapture(0)
 while(True):
     # reading in each frame
     ret, frame = liveStream.read()
-    stream = cv2.applyColorMap(frame, cv2.COLORMAP_WINTER)
+    stream = cv2.applyColorMap(frame, cv2.COLORMAP_RAINBOW)
 
     """
-    JET PARULA SPRING WINTER AUTUMN COOL(creepy)
+    JET PARULA SPRING WINTER AUTUMN COOL(creepy) COLORMAP_RAINBOW
     """
 
 
